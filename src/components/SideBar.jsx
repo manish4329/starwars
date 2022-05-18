@@ -17,8 +17,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Route, Router, Routes } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Movies } from "../pages/Movies";
 import { People } from "../pages/People";
@@ -78,70 +77,98 @@ const SideBar = () => {
         <Router>
           <List>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <Cottage />
+                  <Link to="/">
+                    <Cottage />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Home" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/movies"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <Movie />
+                  <Link to="/movies">
+                    <Movie />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Movies" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/people"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <PeopleAlt />
+                  <Link to="/people">
+                    <PeopleAlt />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="People" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/planets"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <TravelExplore />
+                  <Link to="/planets">
+                    <TravelExplore />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Planets" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/species"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <Psychology />
+                  <Link to="/species">
+                    <Psychology />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Species" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/starships"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <RocketLaunch />
+                  <Link to="/starships">
+                    <RocketLaunch />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="StarShips" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton component={RouterLink} to={"/vehicles"}>
+              <ListItemButton>
                 <ListItemIcon>
-                  <DirectionsCar />
+                  <Link to="/vehicles">
+                    <DirectionsCar />
+                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Vehicles" />
               </ListItemButton>
             </ListItem>
           </List>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/movies" element={<Movies data={movies}/>}/>
-            <Route exact path="/peoples" element={<People data={people} />} />
-            <Route exact path="/planets" element={<Planets data={planets}/>} />
-            <Route exact path="/species" element={<Species data={species}/>} />
-            <Route exact path="/starships" element={<StarShips data={starships}/>} />
-            <Route exact path="/vehicles" element={<Vehicles data={vehicles}/>} />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/movies">
+              <Movies data={movies} />
+            </Route>
+            <Route exact path="/peoples">
+              <People data={people} />
+            </Route>
+            <Route exact path="/planets">
+              <Planets data={planets} />
+            </Route>
+            <Route exact path="/species">
+              <Species data={species} />
+            </Route>
+            <Route exact path="/starships">
+              <StarShips data={starships} />
+            </Route>
+            <Route exact path="/vehicles">
+              <Vehicles data={vehicles} />
+            </Route>
           </Routes>
         </Router>
       </Box>
