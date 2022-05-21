@@ -1,8 +1,6 @@
-import { Card, Grid } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
-
-export const Movies = ({ data }) => {
+import React from 'react';
+import {Box, Grid, Card } from "@mui/material";
+export const Movies = ({data}) => {
   return (
     <>
       <Box>

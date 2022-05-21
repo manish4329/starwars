@@ -1,32 +1,33 @@
+import React from 'react'
 import {
-  Movie,
-  TravelExplore,
-  Psychology,
-  RocketLaunch,
-  DirectionsCar,
-  Cottage,
-  PeopleAlt,
-} from "@mui/icons-material";
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
-import { useEffect, useState } from "react";
-import React from "react";
-import { Link, Route, Router, Routes } from "react-router-dom";
-import { Home } from "../pages/Home";
-import { Movies } from "../pages/Movies";
-import { People } from "../pages/People";
-import { Planets } from "../pages/Planets";
-import { Species } from "../pages/Species";
-import { StarShips } from "../pages/StarShips";
-import { Vehicles } from "../pages/Vehicles";
-
-const SideBar = () => {
+    Movie,
+    TravelExplore,
+    Psychology,
+    RocketLaunch,
+    DirectionsCar,
+    Cottage,
+    PeopleAlt,
+  } from "@mui/icons-material";
+  import { createBrowserHistory } from "history";
+  import {Movies} from "../pages/Movies"
+  import {People} from "../pages/People"
+  import {Planets} from "../pages/Planets"
+  import {Species} from "../pages/Species"
+  import {StarShips} from "../pages/StarShips"
+  import {Vehicles} from "../pages/Vehicles"
+  import {
+    Box,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Link,
+  } from "@mui/material";
+  import { useEffect, useState } from "react";
+  import { Route, Router, Switch } from "react-router-dom";
+  const history = createBrowserHistory({ window });
+export const SideBar = () => {
   const [movies, setMovies] = useState([]);
   const [people, setPeople] = useState([]);
   const [planets, setPlanets] = useState([]);
@@ -74,82 +75,68 @@ const SideBar = () => {
   return (
     <Box flex={1} pt={17} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="Static">
-        <Router>
+        <Router history={history}>
           <List>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/">
-                    <Cottage />
-                  </Link>
+                    <Cottage/>
                 </ListItemIcon>
                 <ListItemText primary="Home" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/movies" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/movies">
                     <Movie />
-                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Movies" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/people" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/people">
                     <PeopleAlt />
-                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="People" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/planets" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/planets">
                     <TravelExplore />
-                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Planets" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/species" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/species">
                     <Psychology />
-                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Species" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/starships" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/starships">
                     <RocketLaunch />
-                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="StarShips" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem  button component={Link} href="/vehicles" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <Link to="/vehicles">
+
                     <DirectionsCar />
-                  </Link>
                 </ListItemIcon>
                 <ListItemText primary="Vehicles" />
               </ListItemButton>
             </ListItem>
           </List>
-          <Routes>
+          <Switch>
             <Route exact path="/">
-              <Home />
             </Route>
             <Route exact path="/movies">
               <Movies data={movies} />
@@ -169,11 +156,10 @@ const SideBar = () => {
             <Route exact path="/vehicles">
               <Vehicles data={vehicles} />
             </Route>
-          </Routes>
+          </Switch>
         </Router>
       </Box>
     </Box>
-  );
-};
-
-export default SideBar;
+  )
+}
+export default SideBar
