@@ -1,10 +1,15 @@
 import React from 'react'
 import { Box, Card, Grid } from '@mui/material';
+import NavBar from '../components/NavBar';
+import SideBar from '../components/SideBar';
+import Footer from '../components/Footer';
 
 export const StarShips = ({data}) => {
   return (
     <>
       <Box>
+        <NavBar/>
+        <SideBar/>
         <h1>Starships</h1>
         <Grid columns={3}>
           {data.map((starships, i) => {
@@ -35,9 +40,10 @@ export const StarShips = ({data}) => {
             );
           })}
         </Grid>
+        <Footer/>
       </Box>
     </>
   )
 }
 
-
+export default StarShips

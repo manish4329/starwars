@@ -9,12 +9,12 @@ import {
     PeopleAlt,
   } from "@mui/icons-material";
   import { createBrowserHistory } from "history";
-  import {Movies} from "../pages/Movies"
-  import {People} from "../pages/People"
-  import {Planets} from "../pages/Planets"
-  import {Species} from "../pages/Species"
-  import {StarShips} from "../pages/StarShips"
-  import {Vehicles} from "../pages/Vehicles"
+  import Movies from "../pages/Movies"
+  import People from "../pages/People"
+  import Planets from "../pages/Planets"
+  import Species from "../pages/Species"
+  import StarShips from "../pages/StarShips"
+  import Vehicles from "../pages/Vehicles"
   import {
     Box,
     List,
@@ -128,7 +128,6 @@ export const SideBar = () => {
             <ListItem  button component={Link} href="/vehicles" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-
                     <DirectionsCar />
                 </ListItemIcon>
                 <ListItemText primary="Vehicles" />
@@ -141,7 +140,7 @@ export const SideBar = () => {
             <Route exact path="/movies">
               <Movies data={movies} />
             </Route>
-            <Route exact path="/peoples">
+            <Route exact path="/people">
               <People data={people} />
             </Route>
             <Route exact path="/planets">

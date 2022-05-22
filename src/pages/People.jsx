@@ -1,10 +1,15 @@
 import { Box, Card, Grid } from '@mui/material';
 import React from 'react'
+import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';
+import SideBar from '../components/SideBar';
 
 export const People = ({data}) => {
   return (
     <>
       <Box>
+        <NavBar/>
+        <SideBar/>
         <h1>People</h1>
         <Grid columns={3}>
           {data.map((people, i) => {
@@ -33,9 +38,10 @@ export const People = ({data}) => {
             );
           })}
         </Grid>
+        <Footer/>
       </Box>
     </>
   )
 }
 
-
+export default People

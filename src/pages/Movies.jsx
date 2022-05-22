@@ -1,5 +1,7 @@
-import React from 'react';
 import {Box, Grid, Card } from "@mui/material";
+import React from 'react';
+
+
 export const Movies = ({data}) => {
   return (
     <>
@@ -32,6 +34,7 @@ export const Movies = ({data}) => {
         </Grid>
       </Box>
     </>
-  );
-};
+  )
+}
 
+export default Movies
