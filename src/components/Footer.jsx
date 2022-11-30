@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
-import React from 'react'
+import React from 'react';
 const StyledAppBar = styled(AppBar)({
   backgroundImage: `url(${"./photos/backgroud.png"})`,
 });
@@ -22,4 +22,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

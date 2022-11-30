@@ -1,36 +1,35 @@
-import React from 'react'
+import React from 'react';
 import { Box, Card, Grid } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 
-export const Vehicles = ({data}) => {
+const Vehicles = ({vehicles}) => {
   return (
-    <>
-      <Box>
+    <Box>
         <NavBar/>
         <SideBar/>
         <h1>Vehicles</h1>
         <Grid columns={3}>
-          {data.map((vehicles, i) => {
+          {vehicles.map((vehicle, i) => {
             return (
               <Grid.Column key={i}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>{vehicles.name}</Card.Header>
+                    <Card.Header>{vehicle.name}</Card.Header>
                     <Card.Description>
                       <strong>Model:</strong>
-                      <p>{vehicles.model}</p>
+                      <p>{vehicle.model}</p>
                       <strong>Class:</strong>
-                      <p>{vehicles.vehicle_class}</p>
+                      <p>{vehicle.vehicle_class}</p>
                       <strong>Manufacturer:</strong>
-                      <p>{vehicles.manufacturer}</p>
+                      <p>{vehicle.manufacturer}</p>
                       <strong>Length:</strong>
-                      <p>{vehicles.length}</p>
+                      <p>{vehicle.length}</p>
                       <strong>Speed:</strong>
-                      <p>{vehicles.max_atmosphering_speed}</p>
+                      <p>{vehicle.max_atmosphering_speed}</p>
                       <strong>Cost(Galactic credits):</strong>
-                      <p>{vehicles.cost_in_credits}</p>
+                      <p>{vehicle.cost_in_credits}</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -40,8 +39,8 @@ export const Vehicles = ({data}) => {
         </Grid>
         <Footer/>
       </Box>
-    </>
   )
 }
 
-export default Vehicles
+export default Vehicles;
+

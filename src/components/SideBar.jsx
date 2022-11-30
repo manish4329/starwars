@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
     Movie,
     TravelExplore,
@@ -9,12 +9,12 @@ import {
     PeopleAlt,
   } from "@mui/icons-material";
   import { createBrowserHistory } from "history";
-  import Movies from "../pages/Movies"
-  import People from "../pages/People"
-  import Planets from "../pages/Planets"
-  import Species from "../pages/Species"
-  import StarShips from "../pages/StarShips"
-  import Vehicles from "../pages/Vehicles"
+import Movies from "../pages/Movies";
+import People from "../pages/People";
+import Planets from "../pages/Planets";
+import Species from "../pages/Species";
+import StarShips from "../pages/StarShips";
+import Vehicles from "../pages/Vehicles";
   import {
     Box,
     List,
@@ -27,9 +27,10 @@ import {
   import { useEffect, useState } from "react";
   import { Route, Router, Switch } from "react-router-dom";
   const history = createBrowserHistory({ window });
-export const SideBar = () => {
+
+const SideBar = () => {
   const [movies, setMovies] = useState([]);
-  const [people, setPeople] = useState([]);
+  const [peoples, setPeoples] = useState([]);
   const [planets, setPlanets] = useState([]);
   const [species, setSpecies] = useState([]);
   const [starships, setStarShips] = useState([]);
@@ -43,7 +44,7 @@ export const SideBar = () => {
     async function fetchPeople() {
       let res = await fetch("https://swapi.dev/api/people/?format=json");
       let data = await res.json();
-      setPeople(data.results);
+      setPeoples(data.results);
     }
     async function fetchPlanets() {
       let res = await fetch("https://swapi.dev/api/planets/?format=json");
@@ -88,7 +89,7 @@ export const SideBar = () => {
             <ListItem  button component={Link} href="/movies" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                    <Movie />
+                    <Movie movies={movies} />
                 </ListItemIcon>
                 <ListItemText primary="Movies" />
               </ListItemButton>
@@ -138,22 +139,22 @@ export const SideBar = () => {
             <Route exact path="/">
             </Route>
             <Route exact path="/movies">
-              <Movies data={movies} />
+              <Movies movies={movies} />
             </Route>
             <Route exact path="/people">
-              <People data={people} />
+              <People peoples={peoples} />
             </Route>
             <Route exact path="/planets">
-              <Planets data={planets} />
+              <Planets planets={planets} />
             </Route>
             <Route exact path="/species">
-              <Species data={species} />
+              <Species species={species} />
             </Route>
             <Route exact path="/starships">
-              <StarShips data={starships} />
+              <StarShips starships={starships} />
             </Route>
             <Route exact path="/vehicles">
-              <Vehicles data={vehicles} />
+              <Vehicles vehicles={vehicles} />
             </Route>
           </Switch>
         </Router>
@@ -161,4 +162,6 @@ export const SideBar = () => {
     </Box>
   )
 }
-export default SideBar
+
+export default SideBar;
+

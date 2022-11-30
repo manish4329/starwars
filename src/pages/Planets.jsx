@@ -1,18 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { Box, Card, Grid } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 
-export const Planets = ({data}) => {
+const Planets = ({planets}) => {
   return (
-    <>
-      <Box>
+    <Box>
         <NavBar/>
         <SideBar/>
         <h1>Planets</h1>
         <Grid columns={3}>
-          {data.map((planets, i) => {
+          {planets.map((planet, i) => {
             return (
               <Grid.Column key={i}>
                 <Card>
@@ -20,21 +19,21 @@ export const Planets = ({data}) => {
                     <Card.Header>{planets.name}</Card.Header>
                     <Card.Description>
                       <strong>Diameter:</strong>
-                      <p>{planets.diameter}</p>
+                      <p>{planet.diameter}</p>
                       <strong>Rotation:</strong>
-                      <p>{planets.rotation_period}</p>
+                      <p>{planet.rotation_period}</p>
                       <strong>Orbital Period:</strong>
-                      <p>{planets.orbital_period}</p>
+                      <p>{planet.orbital_period}</p>
                       <strong>Gravity:</strong>
-                      <p>{planets.gravity}</p>
+                      <p>{planet.gravity}</p>
                       <strong>Population:</strong>
-                      <p>{planets.population}</p>
+                      <p>{planet.population}</p>
                       <strong>Climate:</strong>
-                      <p>{planets.climate}</p>
+                      <p>{planet.climate}</p>
                       <strong>Terrain:</strong>
-                      <p>{planets.terrain}</p>
+                      <p>{planet.terrain}</p>
                       <strong>Surface water percentage:</strong>
-                      <p>{planets.surface_water}</p>
+                      <p>{planet.surface_water}</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -44,8 +43,13 @@ export const Planets = ({data}) => {
         </Grid>
         <Footer/>
       </Box>
-    </>
   )
 }
 
 export default Planets
+
+
+
+
+
+

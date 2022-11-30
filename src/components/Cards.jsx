@@ -1,5 +1,5 @@
-import {CardMedia, Paper} from '@mui/material'
-import React from 'react'
+import { CardMedia, Paper } from '@mui/material';
+import React from 'react';
 
 const Cards = (props) => {
   return (
@@ -14,4 +14,4 @@ const Cards = (props) => {
   )
 }
 
-export default Cards
+export default Cards;

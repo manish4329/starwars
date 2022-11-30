@@ -1,18 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { Box, Card, Grid } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 
-export const StarShips = ({data}) => {
+const StarShips = ({starships}) => {
   return (
-    <>
-      <Box>
+    <Box>
         <NavBar/>
         <SideBar/>
         <h1>Starships</h1>
         <Grid columns={3}>
-          {data.map((starships, i) => {
+          {starships.map((starship, i) => {
             return (
               <Grid.Column key={i}>
                 <Card>
@@ -20,19 +19,19 @@ export const StarShips = ({data}) => {
                     <Card.Header>{starships.name}</Card.Header>
                     <Card.Description>
                       <strong>Model:</strong>
-                      <p>{starships.model}</p>
+                      <p>{starship.model}</p>
                       <strong>Class:</strong>
-                      <p>{starships.starship_class}</p>
+                      <p>{starship.starship_class}</p>
                       <strong>Manufacturer:</strong>
-                      <p>{starships.manufacturer}</p>
+                      <p>{starship.manufacturer}</p>
                       <strong>Cost(Galactic credits):</strong>
-                      <p>{starships.cost_in_credits}</p>
+                      <p>{starship.cost_in_credits}</p>
                       <strong>Length:</strong>
-                      <p>{starships.length}</p>
+                      <p>{starship.length}</p>
                       <strong>Crew:</strong>
-                      <p>{starships.crew}</p>
+                      <p>{starship.crew}</p>
                       <strong>Hyperdrive:</strong>
-                      <p>{starships.hyperdrive_rating}</p>
+                      <p>{starship.hyperdrive_rating}</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -42,8 +41,7 @@ export const StarShips = ({data}) => {
         </Grid>
         <Footer/>
       </Box>
-    </>
   )
 }
 
-export default StarShips
+export default StarShips;

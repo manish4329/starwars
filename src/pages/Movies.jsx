@@ -1,30 +1,29 @@
+import React from 'react'
 import {Box, Grid, Card } from "@mui/material";
-import React from 'react';
 
-
-export const Movies = ({data}) => {
+const Movies = ({ movies }) => {
+  console.log(movies);
   return (
-    <>
-      <Box>
+    <Box>
         <h1>Movies</h1>
         <Grid columns={3}>
-          {data.map((movies, i) => {
+          {movies.map((movie, i) => {
             return (
               <Grid.Column key={i}>
                 <Card>
                   <Card.Content>
-                    <Card.Header>{movies.title}</Card.Header>
+                    <Card.Header>{movie.title}</Card.Header>
                     <Card.Description>
                       <strong>Episode:</strong>
-                      <p>{movies.episode_id}</p>
+                      <p>{movie.episode_id}</p>
                       <strong>Opening:</strong>
-                      <p>{movies.opening_crawl}</p>
+                      <p>{movie.opening_crawl}</p>
                       <strong>Director:</strong>
-                      <p>{movies.director}</p>
+                      <p>{movie.director}</p>
                       <strong>Producer:</strong>
-                      <p>{movies.producer}</p>
+                      <p>{movie.producer}</p>
                       <strong>Release Date:</strong>
-                      <p>{movies.release_date}</p>
+                      <p>{movie.release_date}</p>
                     </Card.Description>
                   </Card.Content>
                 </Card>
@@ -33,8 +32,12 @@ export const Movies = ({data}) => {
           })}
         </Grid>
       </Box>
-    </>
   )
 }
 
-export default Movies
+export default Movies;
+
+
+
+
+
